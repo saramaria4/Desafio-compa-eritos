@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<script>
+function alumnos(nombre, edad, genero) {
+this.nombre =nombre;
+this.edad = edad;
+this.genero =genero;
+}
+
+var Maria =new alumnos("Maria", 30, 1);
+var Andres =new alumnos("Andres", 28, 0);
+var Luisa =new alumnos("Luisa", 29, 1);
+var Jose =new alumnos("Jose", 30, 0);
+var Daniela =new alumnos("Daniela", 27, 1);
+var Ignacio =new alumnos("Ignacio", 26, 0);
+
+var edad_hombres = 0;
+var edad_mujeres = 0;
+var edades_totales = 0;
+var compañeros = [Maria,Andres,Luisa, Jose, Daniela,Ignacio];
+
+
+
+mujeres = function (personas) {
+	var arreglo_mujeres =[];
+personas.forEach (function (valor,indice) {
+	if (valor.genero > 0) {
+		edad_mujeres += valor.edad;
+		console.log (valor.nombre);
+		arreglo_mujeres.push(valor.nombre);
+	}
+
+} );
+console.log (edad_mujeres);
+console.log (arreglo_mujeres);
+}
+
+
+hombres = function (personas) { 
+	var arreglo_hombres = []
+personas.forEach (function (valor,indice) {
+	if (valor.genero == 0) {
+		edad_hombres += valor.edad;
+		console.log (valor.nombre);
+		arreglo_hombres.push (valor.nombre);
+	}
+
+} );
+console.log (edad_hombres);
+console.log (arreglo_hombres);
+}
+
+edades = function (personas){
+	personas.forEach (function (valor,indice){
+		edades_totales += valor.edad; 	
+	});
+	console.log (edades_totales);
+}
+
+
+</script>
+	
+</body>
+</html>
